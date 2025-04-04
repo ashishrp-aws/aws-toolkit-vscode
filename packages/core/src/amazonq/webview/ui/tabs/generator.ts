@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ChatItemType, MynahUIDataModel, QuickActionCommandGroup } from '@aws/mynah-ui'
+import { ChatItemType, MynahIcons, MynahUIDataModel, QuickActionCommandGroup } from '@aws/mynah-ui'
 import { TabType } from '../storages/tabsStorage'
 import { FollowUpGenerator } from '../followUps/generator'
 import { QuickActionGenerator } from '../quickActions/generator'
@@ -72,6 +72,19 @@ export class TabDataGenerator {
                       },
                   ]
                 : [],
+            promptInputOptions: [
+                {
+                    type: 'radiogroup',
+                    id: 'stop-response',
+                    value: 'stop-response',
+                    options: [
+                        {
+                            value: 'stop-response',
+                            icon: MynahIcons.STOP,
+                        },
+                    ],
+                },
+            ],
         }
         return tabData
     }

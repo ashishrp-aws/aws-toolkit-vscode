@@ -121,7 +121,7 @@ export class MessageController {
             this.mynahUI.updateStore(newTabID, {
                 loadingChat: true,
                 cancelButtonWhenLoading: false,
-                promptInputDisabledState: true,
+                promptInputDisabledState: false,
             })
 
             // We have race condition here with onTabAdd Ui event. This way we need to update store twice to be sure

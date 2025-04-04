@@ -48,7 +48,7 @@ export class FollowUpInteractionHandler {
             this.mynahUI.updateStore(tabID, {
                 loadingChat: true,
                 cancelButtonWhenLoading: false,
-                promptInputDisabledState: true,
+                promptInputDisabledState: false,
             })
             this.mynahUI.addChatItem(tabID, {
                 type: ChatItemType.PROMPT,

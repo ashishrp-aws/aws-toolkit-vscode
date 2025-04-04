@@ -36,8 +36,8 @@ export class TextMessageHandler {
 
         this.mynahUI.updateStore(tabID, {
             loadingChat: true,
-            cancelButtonWhenLoading: false,
-            promptInputDisabledState: true,
+            cancelButtonWhenLoading: true,
+            promptInputDisabledState: false,
         })
 
         this.tabsStorage.updateTabStatus(tabID, 'busy')

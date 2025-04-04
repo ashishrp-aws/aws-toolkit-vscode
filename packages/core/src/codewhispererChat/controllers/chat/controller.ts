@@ -367,6 +367,7 @@ export class ChatController {
 
     private async processStopResponseMessage(message: StopResponseMessage) {
         const session = this.sessionStorage.getSession(message.tabID)
+        console.log('stop process has been triggered')
         session.tokenSource.cancel()
         this.chatHistoryStorage.getTabHistory(message.tabID).clearRecentHistory()
     }
@@ -656,6 +657,7 @@ export class ChatController {
                     return
                 }
                 session.setToolUse(undefined)
+                console.log('session undefined in controller', toolUse)
 
                 const toolResults: ToolResult[] = []
 

@@ -76,7 +76,7 @@ export const createMynahUI = (
                 body: 'This conversation has timed out after 48 hours. It will not be saved. Start a new conversation.',
             })
             mynahUI.updateStore(tabID, {
-                promptInputDisabledState: true,
+                promptInputDisabledState: false,
                 promptInputPlaceholder: 'Session ended.',
             })
         },
@@ -422,7 +422,7 @@ export const createMynahUI = (
                 mynahUI.updateStore(tabID, {
                     loadingChat: true,
                     cancelButtonWhenLoading: false,
-                    promptInputDisabledState: true,
+                    promptInputDisabledState: false,
                 })
 
                 tabsStorage.updateTabStatus(tabID, 'busy')
@@ -655,9 +655,10 @@ export const createMynahUI = (
         onTabChange: connector.onTabChange,
         // TODO: update mynah-ui this type doesn't seem correct https://github.com/aws/mynah-ui/blob/3777a39eb534a91fd6b99d6cf421ce78ee5c7526/src/main.ts#L372
         onStopChatResponse: (tabID: string) => {
+            console.log('stop button clicked')
             mynahUI.updateStore(tabID, {
                 loadingChat: false,
-                promptInputDisabledState: false,
+                promptInputDisabledState: true,
             })
             connector.onStopChatResponse(tabID)
         },

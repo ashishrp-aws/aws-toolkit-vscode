@@ -79,6 +79,7 @@ export class UIMessageListener {
                 this.processTriggerTabIDReceived(msg)
                 break
             case 'stop-response':
+                console.log('this stop-response command  in lsitenrer has been called')
                 this.stopResponse(msg)
                 break
             case 'chat-item-voted':
